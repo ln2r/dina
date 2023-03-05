@@ -15,5 +15,11 @@ export default async function Handler(req: NextApiRequest, res: NextApiResponse)
       } catch (err) {
         console.error(err);
       }
+
+    default: 
+      res.status(404).send({
+        status: false,
+        message: 'you are in a weird place rn pal',
+      });
   }
 }
