@@ -27,3 +27,11 @@ ul {
     padding: 0;
   }
 }
+
+.search-result {
+  tr {
+    td:hover {
+      cursor: pointer;
+    }
+  }
+}
