@@ -7,6 +7,7 @@ export const syncDatabase = (module: string) => {
   })
 
   return new Promise(async (resolve, reject) => {
+    console.debug(`[API][db-sync] running update on`, module);
     try {
       let apiRes: any[];
       switch (module) {
