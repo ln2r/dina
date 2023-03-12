@@ -13,7 +13,7 @@ export default async function handler(
   // query.region = game region
   const historical: ArsaMarketHistoricalData = await (await get(`https://api.arsha.io/v2/${req.query.region}/history?id=${req.query.id}&sid=${req.query.sid}`)).data;
   const labels: string[] = Object.keys(historical.history).map((timeData:string) => {
-    return new Date(parseInt(timeData)).toLocaleTimeString();
+    return new Date(parseInt(timeData) * 1000).toLocaleTimeString();
   });
 
   res.status(200).send({
